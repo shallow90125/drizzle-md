@@ -1,0 +1,43 @@
+{
+  "name": "drizzle-md",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A simple example library built by tsdown",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "typecheck": "tsgo --noEmit",
+    "prepare": "husky || true"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "7.0.0-dev.20260216.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "oxfmt": "latest",
+    "oxlint": "latest",
+    "tsdown": "^0.20.3",
+    "typescript": "^5.9.3"
+  },
+  "lint-staged": {
+    "*": [
+      "pnpm run fmt"
+    ],
+    "*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}": [
+      "pnpm run lint:fix"
+    ]
+  },
+  "packageManager": "pnpm@10.18.1"
+}
