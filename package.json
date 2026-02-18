@@ -35,8 +35,11 @@
     "*": [
       "pnpm run fmt"
     ],
-    "*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}": [
+    "*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}": [
       "pnpm run lint:fix"
+    ],
+    "*.{ts,mts,cts,tsx}": [
+      "pnpm run typecheck"
     ]
   },
   "packageManager": "pnpm@10.18.1"
